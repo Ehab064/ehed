@@ -12,7 +12,7 @@ export function Header() {
       <div className="container-ehed grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:py-4">
         <Link to="/" className="flex min-w-0 items-center" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src={logo}
             alt="Experience House (EHED) — Your Regional Business Gateway"
             className="h-10 w-auto shrink-0 lg:h-12"
             width={470}
