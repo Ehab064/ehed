@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowRight } from "lucide-react";
-import logo from "@/assets/ehed-logo-white.png.asset.json";
+import logo from "@/assets/ehed-logo.png";
 import { NAV } from "@/lib/site-data";
 
 export function Header() {
