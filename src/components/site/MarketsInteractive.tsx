@@ -11,7 +11,7 @@ export function MarketsInteractive() {
   return (
     <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
       <div className="relative overflow-hidden rounded-[var(--radius-3xl)] border border-white/10 bg-[var(--navy-deep)] p-5 sm:p-8">
-        <svg viewBox="0 0 100 100" className="h-auto w-full" role="img" aria-label="Map of EHED connected markets">
+        <svg viewBox="24 4 68 68" className="h-auto w-full" role="img" aria-label="Map of EHED connected markets">
           <defs>
             <radialGradient id="glow" cx="50%" cy="50%">
               <stop offset="0%" stopColor="var(--teal)" stopOpacity="0.35" />
