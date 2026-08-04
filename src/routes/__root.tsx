@@ -91,6 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Experience House (EHED)" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "EHED — Your Regional Business Gateway in East Africa" },
+      { name: "twitter:title", content: "EHED — Your Regional Business Gateway in East Africa" },
+      { property: "og:description", content: "Experience House (EHED): Rwanda-based regional trade and business development connecting East Africa with the Middle East and North Africa." },
+      { name: "twitter:description", content: "Experience House (EHED): Rwanda-based regional trade and business development connecting East Africa with the Middle East and North Africa." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/10576243-380e-49ce-b39c-d6974feb9b14/id-preview-13049ca8--2324c393-c16a-4f5c-99a1-169c9e9eb2e4.lovable.app-1785873169811.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/10576243-380e-49ce-b39c-d6974feb9b14/id-preview-13049ca8--2324c393-c16a-4f5c-99a1-169c9e9eb2e4.lovable.app-1785873169811.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
