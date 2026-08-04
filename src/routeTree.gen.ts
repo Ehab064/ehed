@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CoffeeTeaRouteImport } from './routes/coffee-tea'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MarketsRouteImport } from './routes/markets'
 import { Route as ServicesRouteImport } from './routes/services'
 
@@ -22,6 +24,16 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoffeeTeaRoute = CoffeeTeaRouteImport.update({
+  id: '/coffee-tea',
+  path: '/coffee-tea',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketsRoute = MarketsRouteImport.update({
@@ -38,12 +50,16 @@ const ServicesRoute = ServicesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coffee-tea': typeof CoffeeTeaRoute
+  '/contact': typeof ContactRoute
   '/markets': typeof MarketsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coffee-tea': typeof CoffeeTeaRoute
+  '/contact': typeof ContactRoute
   '/markets': typeof MarketsRoute
   '/services': typeof ServicesRoute
 }
@@ -51,20 +67,32 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coffee-tea': typeof CoffeeTeaRoute
+  '/contact': typeof ContactRoute
   '/markets': typeof MarketsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/markets' | '/services'
+  fullPaths:
+    '/' | '/about' | '/coffee-tea' | '/contact' | '/markets' | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/markets' | '/services'
-  id: '__root__' | '/' | '/about' | '/markets' | '/services'
+  to: '/' | '/about' | '/coffee-tea' | '/contact' | '/markets' | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/coffee-tea'
+    | '/contact'
+    | '/markets'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CoffeeTeaRoute: typeof CoffeeTeaRoute
+  ContactRoute: typeof ContactRoute
   MarketsRoute: typeof MarketsRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -83,6 +111,20 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coffee-tea': {
+      id: '/coffee-tea'
+      path: '/coffee-tea'
+      fullPath: '/coffee-tea'
+      preLoaderRoute: typeof CoffeeTeaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/markets': {
@@ -105,9 +147,21 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CoffeeTeaRoute: CoffeeTeaRoute,
+  ContactRoute: ContactRoute,
   MarketsRoute: MarketsRoute,
   ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
