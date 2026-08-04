@@ -18,7 +18,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((service, i) => {
-        const Icon = ICONS[i % ICONS.length];
+        const Icon = ICONS[i % ICONS.length]!;
         return (
           <Reveal key={service.slug} delay={i * 0.06}>
             <article className="card-elevated flex h-full flex-col p-7">

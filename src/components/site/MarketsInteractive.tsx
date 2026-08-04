@@ -4,7 +4,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { MARKETS, type Market } from "@/lib/site-data";
 
 export function MarketsInteractive() {
-  const [activeCode, setActiveCode] = useState(MARKETS[0].code);
+  const [activeCode, setActiveCode] = useState<string>(MARKETS[0]!.code);
   const active = MARKETS.find((m) => m.code === activeCode) as Market;
   const hub = MARKETS.find((m) => m.hub) as Market;
 
