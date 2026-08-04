@@ -122,7 +122,7 @@ function Home() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.36 }}
-            className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/12 bg-white/8 backdrop-blur sm:grid-cols-3 lg:grid-cols-5"
+            className="mt-16 grid grid-cols-2 divide-x divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/15 bg-[var(--navy-deep)]/75 backdrop-blur-md sm:grid-cols-3 lg:grid-cols-5 lg:divide-y-0"
           >
             {STATS.concat([{ value: "1M+", label: "Tons Handled" }]).map((s, i) => {
               const Icon = STAT_ICONS[i % STAT_ICONS.length]!;
