@@ -4,7 +4,7 @@ const BASE_URL = ""; // TODO: set once a domain is configured
 
 const PATHS = ["/", "/about", "/services", "/markets", "/coffee-tea", "/contact"];
 
-export const Route = createFileRoute("/sitemap/xml")({
+export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: () => {
