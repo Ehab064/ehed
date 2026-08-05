@@ -1,8 +1,8 @@
 export const COMPANY = {
-  name: "Experience House (EHED)",
+  name: "إكسبيريانس هاوس (EHED)",
   short: "EHED",
-  tagline: "Your Regional Business Gateway",
-  address: "Ikaze House, Remera, Kigali, Rwanda",
+  tagline: "بوابتك التجارية الإقليمية",
+  address: "إيكازي هاوس، ريميرا، كيغالي، رواندا",
   phone: "+250 791 704 237",
   phoneHref: "+250791704237",
   website: "www.ehedegypt.com",
@@ -10,70 +10,70 @@ export const COMPANY = {
 };
 
 export const NAV = [
-  { label: "Home", to: "/" },
-  { label: "About Us", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Markets", to: "/markets" },
-  { label: "Coffee & Tea", to: "/coffee-tea" },
-  { label: "Contact Us", to: "/contact" },
+  { label: "الرئيسية", to: "/" },
+  { label: "من نحن", to: "/about" },
+  { label: "خدماتنا", to: "/services" },
+  { label: "الأسواق", to: "/markets" },
+  { label: "البن والشاي", to: "/coffee-tea" },
+  { label: "تواصل معنا", to: "/contact" },
 ] as const;
 
 export const STATS = [
-  { value: "7+", label: "Markets Connected" },
-  { value: "50+", label: "Business Partners" },
-  { value: "100+", label: "Projects Delivered" },
-  { value: "10+", label: "Years of Experience" },
+  { value: "+7", label: "أسواق مترابطة" },
+  { value: "+50", label: "شريك أعمال" },
+  { value: "+100", label: "مشروع منفَّذ" },
+  { value: "+10", label: "سنوات من الخبرة" },
 ];
 
 export const SERVICES = [
   {
     slug: "trade-facilitation",
-    title: "Trade Facilitation",
+    title: "تيسير التجارة",
     description:
-      "Supporting smooth cross-border business operations and commercial partnerships between East Africa and Middle East markets.",
-    benefit: "Fewer barriers, faster deals across borders.",
+      "دعم العمليات التجارية العابرة للحدود والشراكات التجارية بين أسواق شرق أفريقيا والشرق الأوسط بسلاسة وكفاءة.",
+    benefit: "عوائق أقل وصفقات أسرع عبر الحدود.",
   },
   {
     slug: "market-entry",
-    title: "Market Entry Support",
+    title: "دعم دخول الأسواق",
     description:
-      "Helping companies establish and expand within East African markets through local market guidance and operational support.",
-    benefit: "Enter new markets with local intelligence on your side.",
+      "مساعدة الشركات على التأسيس والتوسع داخل أسواق شرق أفريقيا عبر الإرشاد المحلي والدعم التشغيلي.",
+    benefit: "ادخل أسواقاً جديدة بمعرفة محلية موثوقة.",
   },
   {
     slug: "sourcing",
-    title: "Supplier Sourcing & Procurement",
+    title: "توريد الموردين والمشتريات",
     description:
-      "Identifying reliable suppliers, manufacturers, and procurement opportunities across regional markets.",
-    benefit: "Verified suppliers and competitive procurement.",
+      "تحديد الموردين والمصنّعين الموثوقين وفرص الشراء والتوريد عبر الأسواق الإقليمية.",
+    benefit: "موردون موثّقون ومشتريات بأسعار تنافسية.",
   },
   {
     slug: "representation",
-    title: "Business Representation",
+    title: "التمثيل التجاري",
     description:
-      "Acting as a regional representative for companies seeking market presence and operational support in East Africa.",
-    benefit: "A trusted presence on the ground without a local entity.",
+      "العمل كممثل إقليمي للشركات الراغبة في حضور سوقي ودعم تشغيلي داخل شرق أفريقيا.",
+    benefit: "حضور موثوق على الأرض دون الحاجة لكيان محلي.",
   },
   {
     slug: "expansion",
-    title: "Regional Expansion Support",
+    title: "دعم التوسع الإقليمي",
     description:
-      "Providing coordination and strategic support for companies expanding into East African markets.",
-    benefit: "A structured roadmap for regional growth.",
+      "توفير التنسيق والدعم الاستراتيجي للشركات التي تتوسع في أسواق شرق أفريقيا.",
+    benefit: "خارطة طريق منظّمة للنمو الإقليمي.",
   },
   {
     slug: "logistics",
-    title: "Logistics Coordination",
+    title: "تنسيق الخدمات اللوجستية",
     description:
-      "Coordinating sourcing, shipping, and operational business requirements across multiple markets.",
-    benefit: "One coordinator across the full movement chain.",
+      "تنسيق التوريد والشحن والمتطلبات التشغيلية للأعمال عبر أسواق متعددة.",
+    benefit: "منسّق واحد لسلسلة الحركة بالكامل.",
   },
   {
     slug: "coffee-tea",
-    title: "Coffee & Tea Export",
+    title: "تصدير البن والشاي",
     description:
-      "Supporting export opportunities for premium East African coffee and tea to Egypt, Saudi Arabia and regional markets.",
-    benefit: "Direct access to premium origin products.",
+      "دعم فرص تصدير البن والشاي الفاخر من شرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية.",
+    benefit: "وصول مباشر لمنتجات المنشأ الفاخرة.",
   },
 ];
 
@@ -92,101 +92,101 @@ export type Market = {
 export const MARKETS: Market[] = [
   {
     code: "RW",
-    name: "Rwanda",
-    role: "Regional Hub",
+    name: "رواندا",
+    role: "المركز الإقليمي",
     summary:
-      "EHED's operational base. Rwanda offers a stable, business-friendly environment and direct access to the wider East African Community.",
-    highlights: ["Head office in Kigali", "Ease of doing business", "Gateway to EAC & DRC"],
+      "المقر التشغيلي لـ EHED. توفر رواندا بيئة أعمال مستقرة وداعمة ووصولاً مباشراً إلى مجموعة شرق أفريقيا الأوسع.",
+    highlights: ["المقر الرئيسي في كيغالي", "سهولة ممارسة الأعمال", "بوابة إلى شرق أفريقيا والكونغو"],
     x: 46,
     y: 58,
     hub: true,
   },
   {
     code: "UG",
-    name: "Uganda",
-    role: "East Africa",
+    name: "أوغندا",
+    role: "شرق أفريقيا",
     summary:
-      "Agricultural sourcing and cross-border distribution corridor with strong demand for regional trade services.",
-    highlights: ["Agri sourcing", "Distribution corridor", "Growing consumer market"],
+      "ممر للتوريد الزراعي والتوزيع العابر للحدود مع طلب قوي على خدمات التجارة الإقليمية.",
+    highlights: ["توريد زراعي", "ممر توزيع", "سوق استهلاكي متنامٍ"],
     x: 52,
     y: 46,
   },
   {
     code: "KE",
-    name: "Kenya",
-    role: "East Africa",
+    name: "كينيا",
+    role: "شرق أفريقيا",
     summary:
-      "The region's commercial and logistics centre, connecting inland markets to the Indian Ocean through Mombasa.",
-    highlights: ["Mombasa port access", "Financial services hub", "Regional headquarters"],
+      "المركز التجاري واللوجستي للمنطقة، ويربط الأسواق الداخلية بالمحيط الهندي عبر ميناء مومباسا.",
+    highlights: ["الوصول لميناء مومباسا", "مركز للخدمات المالية", "مقرات إقليمية"],
     x: 62,
     y: 43,
   },
   {
     code: "TZ",
-    name: "Tanzania",
-    role: "East Africa",
+    name: "تنزانيا",
+    role: "شرق أفريقيا",
     summary:
-      "Dar es Salaam corridor access, mining and agricultural sourcing, and a large domestic consumer base.",
-    highlights: ["Dar es Salaam corridor", "Commodity sourcing", "Cross-border logistics"],
+      "الوصول إلى ممر دار السلام، وتوريد المعادن والمنتجات الزراعية، وقاعدة استهلاكية محلية كبيرة.",
+    highlights: ["ممر دار السلام", "توريد السلع", "لوجستيات عابرة للحدود"],
     x: 58,
     y: 64,
   },
   {
     code: "CD",
-    name: "DRC",
-    role: "East Africa",
+    name: "الكونغو الديمقراطية",
+    role: "شرق أفريقيا",
     summary:
-      "High-growth frontier market served through the Rwandan border, with strong demand for consumer and industrial goods.",
-    highlights: ["Frontier demand", "Border trade via Rwanda", "Industrial supply"],
+      "سوق واعد سريع النمو يتم خدمته عبر الحدود الرواندية، مع طلب قوي على السلع الاستهلاكية والصناعية.",
+    highlights: ["طلب على الأسواق الناشئة", "تجارة حدودية عبر رواندا", "إمداد صناعي"],
     x: 34,
     y: 58,
   },
   {
     code: "EG",
-    name: "Egypt",
-    role: "North Africa",
+    name: "مصر",
+    role: "شمال أفريقيا",
     summary:
-      "A primary destination market for East African coffee, tea and agricultural products, plus a manufacturing sourcing base.",
-    highlights: ["Coffee & tea demand", "Manufacturing sourcing", "MENA distribution"],
+      "سوق وجهة رئيسي للبن والشاي والمنتجات الزراعية من شرق أفريقيا، إضافة إلى قاعدة توريد صناعية.",
+    highlights: ["طلب على البن والشاي", "توريد صناعي", "توزيع في منطقة الشرق الأوسط"],
     x: 50,
     y: 14,
   },
   {
     code: "SA",
-    name: "Saudi Arabia",
-    role: "Middle East",
+    name: "السعودية",
+    role: "الشرق الأوسط",
     summary:
-      "Fast-growing Gulf demand for premium origin products and long-term regional partnership opportunities.",
-    highlights: ["Premium product demand", "Gulf partnerships", "Long-term contracts"],
+      "طلب خليجي سريع النمو على منتجات المنشأ الفاخرة وفرص شراكة إقليمية طويلة الأمد.",
+    highlights: ["طلب على المنتجات الفاخرة", "شراكات خليجية", "عقود طويلة الأجل"],
     x: 82,
     y: 22,
   },
 ];
 
 export const VALUES = [
-  "Professionalism",
-  "Integrity",
-  "Regional Connectivity",
-  "Strategic Partnerships",
-  "Business Growth",
-  "Reliability",
+  "الاحترافية",
+  "النزاهة",
+  "الترابط الإقليمي",
+  "الشراكات الاستراتيجية",
+  "نمو الأعمال",
+  "الموثوقية",
 ];
 
 export const WHY_RWANDA = [
   {
-    title: "Stable & Business-Friendly",
-    text: "Consistently ranked among Africa's easiest places to do business, with efficient company registration and transparent processes.",
+    title: "بيئة مستقرة وداعمة للأعمال",
+    text: "تُصنَّف رواندا باستمرار ضمن أسهل الوجهات لممارسة الأعمال في أفريقيا، بإجراءات تسجيل فعّالة وعمليات شفافة.",
   },
   {
-    title: "Strategic Location",
-    text: "A natural gateway between the East African Community, DRC and onward corridors to the Middle East and North Africa.",
+    title: "موقع استراتيجي",
+    text: "بوابة طبيعية بين مجموعة شرق أفريقيا والكونغو الديمقراطية والممرات الممتدة نحو الشرق الأوسط وشمال أفريقيا.",
   },
   {
-    title: "Modern Infrastructure",
-    text: "Reliable connectivity, logistics corridors and a growing international air network out of Kigali.",
+    title: "بنية تحتية حديثة",
+    text: "اتصال موثوق وممرات لوجستية وشبكة طيران دولية متنامية انطلاقاً من كيغالي.",
   },
   {
-    title: "Trusted Environment",
-    text: "Strong governance and security standards that give international partners confidence to operate.",
+    title: "بيئة موثوقة",
+    text: "معايير حوكمة وأمان قوية تمنح الشركاء الدوليين الثقة للعمل والاستثمار.",
   },
 ];
