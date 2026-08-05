@@ -5,9 +5,9 @@ import logisticsImg from "@/assets/logistics.jpg";
 import { PageHero, Reveal, SectionHeading } from "@/components/site/Section";
 import { CtaBand } from "@/components/site/CtaBand";
 
-const title = "Coffee & Tea Export — Premium East African Origin | EHED";
+const title = "تصدير البن والشاي — منشأ شرق أفريقي فاخر | EHED";
 const description =
-  "EHED supports the export of premium Rwandan and East African coffee and tea to Egypt, Saudi Arabia and regional markets, from sourcing to shipment.";
+  "تدعم EHED تصدير البن والشاي الفاخر من رواندا وشرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية، من التوريد وحتى الشحن.";
 
 export const Route = createFileRoute("/coffee-tea")({
   component: CoffeeTea,
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/coffee-tea")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "ar_AR" },
       { property: "og:url", content: "/coffee-tea" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -28,18 +29,18 @@ export const Route = createFileRoute("/coffee-tea")({
 const PRODUCTS = [
   {
     icon: Coffee,
-    name: "Arabica Coffee",
-    text: "High-altitude Rwandan and East African Arabica — fully washed green beans, screen-graded and cupping-scored.",
+    name: "بن أرابيكا",
+    text: "أرابيكا من مرتفعات رواندا وشرق أفريقيا — حبوب خضراء مغسولة بالكامل، مصنّفة بالحجم ومقيّمة بالتذوّق.",
   },
   {
     icon: Leaf,
-    name: "Black & Green Tea",
-    text: "Estate and cooperative teas from East African highlands, available in bulk grades and packaged formats.",
+    name: "الشاي الأسود والأخضر",
+    text: "شاي من مزارع وتعاونيات مرتفعات شرق أفريقيا، متوفر بدرجات سائبة وبأشكال معبّأة.",
   },
   {
     icon: Ship,
-    name: "Export Handling",
-    text: "Documentation, quality certificates, packaging and shipment coordination to Egypt, Saudi Arabia and beyond.",
+    name: "إجراءات التصدير",
+    text: "المستندات وشهادات الجودة والتعبئة وتنسيق الشحن إلى مصر والسعودية وما بعدها.",
   },
 ];
 
@@ -47,9 +48,9 @@ function CoffeeTea() {
   return (
     <>
       <PageHero
-        eyebrow="Coffee & Tea"
-        title="Premium East African coffee and tea, export-ready"
-        intro="From high-altitude estates and cooperatives to buyers across Egypt, Saudi Arabia and the wider MENA region."
+        eyebrow="البن والشاي"
+        title="بن وشاي فاخر من شرق أفريقيا جاهز للتصدير"
+        intro="من المزارع والتعاونيات في المرتفعات إلى المشترين في مصر والسعودية ومنطقة الشرق الأوسط وشمال أفريقيا."
       />
 
       <section className="py-20 lg:py-28">
@@ -57,7 +58,7 @@ function CoffeeTea() {
           <Reveal>
             <img
               src={coffeeImg}
-              alt="Ripe Rwandan coffee cherries and a tea plantation at sunrise"
+              alt="ثمار البن الرواندي الناضجة ومزرعة شاي عند الشروق"
               width={1600}
               height={1100}
               loading="lazy"
@@ -66,17 +67,17 @@ function CoffeeTea() {
           </Reveal>
           <div>
             <SectionHeading
-              eyebrow="Origin"
-              title="Sourced from trusted estates and cooperatives"
-              intro="East Africa's altitude, volcanic soils and climate produce some of the world's most distinctive coffee and tea. EHED works directly with producers to secure consistent quality and traceable supply."
+              eyebrow="المنشأ"
+              title="من مزارع وتعاونيات موثوقة"
+              intro="تنتج مرتفعات شرق أفريقيا وتربتها البركانية ومناخها بعضاً من أميز أنواع البن والشاي في العالم. تعمل EHED مباشرة مع المنتجين لضمان جودة ثابتة وسلسلة توريد قابلة للتتبع."
             />
             <Reveal delay={0.1}>
               <ul className="mt-6 space-y-3">
                 {[
-                  "Traceable sourcing from verified producers",
-                  "Quality control and pre-shipment inspection",
-                  "Flexible volumes for first-time and repeat buyers",
-                  "Export documentation handled end to end",
+                  "توريد قابل للتتبع من منتجين موثّقين",
+                  "مراقبة الجودة والفحص قبل الشحن",
+                  "كميات مرنة للمشترين الجدد والمتكررين",
+                  "إدارة كاملة لمستندات التصدير",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-[var(--navy)]">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />
@@ -91,7 +92,7 @@ function CoffeeTea() {
 
       <section className="bg-[var(--sand)] py-20 lg:py-28">
         <div className="container-ehed">
-          <SectionHeading eyebrow="Product Range" title="What we export" align="center" />
+          <SectionHeading eyebrow="تشكيلة المنتجات" title="ماذا نصدّر" align="center" />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {PRODUCTS.map((p, i) => (
               <Reveal key={p.name} delay={i * 0.07}>
@@ -112,17 +113,17 @@ function CoffeeTea() {
         <div className="container-ehed grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
-              eyebrow="Export Process"
-              title="From farm gate to destination port"
-              intro="A single coordinated process covering sourcing, quality, documentation and shipment."
+              eyebrow="عملية التصدير"
+              title="من بوابة المزرعة إلى ميناء الوصول"
+              intro="عملية واحدة منسّقة تغطي التوريد والجودة والمستندات والشحن."
             />
             <Reveal delay={0.1}>
               <ol className="mt-6 space-y-5">
                 {[
-                  ["Sourcing", "Producer selection, sampling and price negotiation."],
-                  ["Quality", "Grading, cupping and pre-shipment inspection."],
-                  ["Documentation", "Certificates of origin, phytosanitary and export permits."],
-                  ["Shipment", "Packaging, freight booking and delivery coordination."],
+                  ["التوريد", "اختيار المنتجين وأخذ العينات والتفاوض على الأسعار."],
+                  ["الجودة", "التصنيف والتذوّق والفحص قبل الشحن."],
+                  ["المستندات", "شهادات المنشأ والشهادات الصحية النباتية وتصاريح التصدير."],
+                  ["الشحن", "التعبئة وحجز الشحن وتنسيق التسليم."],
                 ].map(([step, text], i) => (
                   <li key={step} className="flex gap-4">
                     <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--navy)] text-xs font-semibold text-white">
@@ -140,7 +141,7 @@ function CoffeeTea() {
           <Reveal delay={0.1}>
             <img
               src={logisticsImg}
-              alt="Export containers ready for shipment"
+              alt="حاويات تصدير جاهزة للشحن"
               width={1400}
               height={900}
               loading="lazy"
