@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowLeft } from "lucide-react";
 import logo from "@/assets/ehed-logo.png";
 import { NAV } from "@/lib/site-data";
 
@@ -13,7 +13,7 @@ export function Header() {
         <Link to="/" className="flex min-w-0 items-center" onClick={() => setOpen(false)}>
           <img
             src={logo}
-            alt="Experience House (EHED) — Your Regional Business Gateway"
+            alt="إكسبيريانس هاوس (EHED) — بوابتك التجارية الإقليمية"
             className="h-10 w-auto shrink-0 lg:h-12"
             width={470}
             height={250}
@@ -35,13 +35,13 @@ export function Header() {
             to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-[var(--teal)] px-5 py-2.5 text-sm font-semibold text-[var(--navy-deep)] transition-transform hover:-translate-y-0.5"
           >
-            Contact Us <ArrowRight className="h-4 w-4" />
+            تواصل معنا <ArrowLeft className="h-4 w-4" />
           </Link>
         </nav>
 
         <button
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
           onClick={() => setOpen((v) => !v)}
           className="shrink-0 rounded-md p-2 text-white lg:hidden"
         >
