@@ -10,20 +10,20 @@ export function Footer() {
         <div>
           <img
             src={logo.url}
-            alt="Experience House (EHED)"
+            alt="إكسبيريانس هاوس (EHED)"
             className="h-12 w-auto"
             width={470}
             height={250}
             loading="lazy"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/65">
-            A Rwanda-based regional trade and business development company connecting East African
-            markets with partners across the Middle East and North Africa.
+            شركة تجارة وتطوير أعمال إقليمية مقرها رواندا، تربط أسواق شرق أفريقيا بشركاء في الشرق
+            الأوسط وشمال أفريقيا.
           </p>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-wide text-white">Navigate</h3>
+          <h3 className="text-sm font-semibold tracking-wide text-white">تصفّح</h3>
           <ul className="mt-4 space-y-2.5">
             {NAV.map((item) => (
               <li key={item.to}>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-wide text-white">Services</h3>
+          <h3 className="text-sm font-semibold tracking-wide text-white">الخدمات</h3>
           <ul className="mt-4 space-y-2.5">
             {SERVICES.slice(0, 6).map((s) => (
               <li key={s.slug} className="text-sm text-white/65">
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-wide text-white">Contact</h3>
+          <h3 className="text-sm font-semibold tracking-wide text-white">تواصل معنا</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/65">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />
@@ -55,13 +55,13 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />
-              <a href={`tel:${COMPANY.phoneHref}`} className="hover:text-[var(--teal-soft)]">
+              <a href={`tel:${COMPANY.phoneHref}`} dir="ltr" className="hover:text-[var(--teal-soft)]">
                 {COMPANY.phone}
               </a>
             </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />
-              <a href={`mailto:${COMPANY.email}`} className="hover:text-[var(--teal-soft)]">
+              <a href={`mailto:${COMPANY.email}`} dir="ltr" className="hover:text-[var(--teal-soft)]">
                 {COMPANY.email}
               </a>
             </li>
@@ -71,6 +71,7 @@ export function Footer() {
                 href={`https://${COMPANY.website}`}
                 target="_blank"
                 rel="noreferrer"
+                dir="ltr"
                 className="hover:text-[var(--teal-soft)]"
               >
                 {COMPANY.website}
@@ -82,8 +83,8 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-ehed flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Experience House (EHED). All rights reserved.</p>
-          <p>Regional Trade • Business Development • Market Expansion</p>
+          <p>© {new Date().getFullYear()} إكسبيريانس هاوس (EHED). جميع الحقوق محفوظة.</p>
+          <p>التجارة الإقليمية • تطوير الأعمال • التوسع في الأسواق</p>
         </div>
       </div>
     </footer>

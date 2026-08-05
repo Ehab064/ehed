@@ -4,9 +4,9 @@ import { MarketsInteractive } from "@/components/site/MarketsInteractive";
 import { CtaBand } from "@/components/site/CtaBand";
 import { MARKETS } from "@/lib/site-data";
 
-const title = "Markets — East Africa, Egypt & Saudi Arabia | EHED";
+const title = "الأسواق — شرق أفريقيا ومصر والسعودية | EHED";
 const description =
-  "EHED connects Rwanda, Uganda, Tanzania, Kenya and DRC with Egypt and Saudi Arabia through a coordinated regional trade corridor.";
+  "تربط EHED رواندا وأوغندا وتنزانيا وكينيا والكونغو الديمقراطية بمصر والسعودية عبر ممر تجاري إقليمي منسّق.";
 
 export const Route = createFileRoute("/markets")({
   component: Markets,
@@ -17,6 +17,7 @@ export const Route = createFileRoute("/markets")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "ar_AR" },
       { property: "og:url", content: "/markets" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -28,9 +29,9 @@ function Markets() {
   return (
     <>
       <PageHero
-        eyebrow="Markets We Connect"
-        title="One corridor from East Africa to the Gulf"
-        intro="Explore the seven focus markets where EHED operates, sources and represents international partners."
+        eyebrow="الأسواق التي نربطها"
+        title="ممر واحد من شرق أفريقيا إلى الخليج"
+        intro="استكشف الأسواق السبعة التي تعمل فيها EHED وتوردّ منها وتمثّل فيها شركاءها الدوليين."
       />
 
       <section className="py-20 lg:py-28">
@@ -41,14 +42,14 @@ function Markets() {
 
       <section className="bg-[var(--sand)] py-20 lg:py-28">
         <div className="container-ehed">
-          <SectionHeading eyebrow="Focus Countries" title="Where we operate" align="center" />
+          <SectionHeading eyebrow="دول التركيز" title="أين نعمل" align="center" />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {MARKETS.map((m, i) => (
               <Reveal key={m.code} delay={i * 0.05}>
                 <article className="card-elevated h-full p-7">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-3">
                     <h3 className="text-lg text-[var(--navy)]">{m.name}</h3>
-                    <span className="rounded-full bg-[var(--teal)]/12 px-3 py-1 text-xs font-semibold text-[var(--teal)]">
+                    <span className="shrink-0 rounded-full bg-[var(--teal)]/12 px-3 py-1 text-xs font-semibold text-[var(--teal)]">
                       {m.role}
                     </span>
                   </div>

@@ -6,9 +6,9 @@ import { PageHero, Reveal, SectionHeading } from "@/components/site/Section";
 import { CtaBand } from "@/components/site/CtaBand";
 import { VALUES } from "@/lib/site-data";
 
-const title = "About EHED — Regional Trade & Business Development in Rwanda";
+const title = "من نحن — التجارة الإقليمية وتطوير الأعمال في رواندا | EHED";
 const description =
-  "Experience House (EHED) is a Rwanda-based trade and business development company with a flexible, partnership-driven model connecting East Africa with MENA markets.";
+  "إكسبيريانس هاوس (EHED) شركة تجارة وتطوير أعمال مقرها رواندا، بنموذج مرن قائم على الشراكة يربط شرق أفريقيا بأسواق الشرق الأوسط وشمال أفريقيا.";
 
 export const Route = createFileRoute("/about")({
   component: About,
@@ -19,6 +19,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "ar_AR" },
       { property: "og:url", content: "/about" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -30,38 +31,36 @@ function About() {
   return (
     <>
       <PageHero
-        eyebrow="About Us"
-        title="Simplifying cross-border business across East Africa"
-        intro="A regional trade and business development company built on partnerships, local knowledge and international standards."
+        eyebrow="من نحن"
+        title="تبسيط الأعمال العابرة للحدود في شرق أفريقيا"
+        intro="شركة تجارة وتطوير أعمال إقليمية قائمة على الشراكات والمعرفة المحلية والمعايير الدولية."
       />
 
       <section className="py-20 lg:py-28">
         <div className="container-ehed grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
-              eyebrow="Company Introduction"
-              title="Experience House (EHED)"
-              intro="Experience House (EHED) is a Rwanda-based regional trade and business development company focused on connecting East African markets with partners across the Middle East and North Africa."
+              eyebrow="نبذة عن الشركة"
+              title="إكسبيريانس هاوس (EHED)"
+              intro="إكسبيريانس هاوس (EHED) شركة تجارة وتطوير أعمال إقليمية مقرها رواندا، تركز على ربط أسواق شرق أفريقيا بشركاء في الشرق الأوسط وشمال أفريقيا."
             />
             <Reveal delay={0.1}>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                The company provides trade facilitation, sourcing & procurement, market entry
-                support, business representation, and logistics coordination services for businesses
-                seeking expansion opportunities across East Africa. EHED also supports the export of
-                premium East African coffee and tea products to Egypt, Saudi Arabia, and regional
-                markets.
+                تقدّم الشركة خدمات تيسير التجارة والتوريد والمشتريات ودعم دخول الأسواق والتمثيل
+                التجاري وتنسيق الخدمات اللوجستية للشركات الباحثة عن فرص توسع في شرق أفريقيا. كما تدعم
+                EHED تصدير منتجات البن والشاي الفاخرة من شرق أفريقيا إلى مصر والسعودية والأسواق
+                الإقليمية.
               </p>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Through a flexible and partnership-driven business model, EHED aims to simplify
-                cross-border business operations and create sustainable regional business
-                opportunities.
+                من خلال نموذج أعمال مرن قائم على الشراكة، تهدف EHED إلى تبسيط العمليات التجارية
+                العابرة للحدود وخلق فرص أعمال إقليمية مستدامة.
               </p>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <img
               src={aboutImg}
-              alt="EHED team meeting with international business partners"
+              alt="اجتماع فريق EHED مع شركاء أعمال دوليين"
               width={1400}
               height={1000}
               loading="lazy"
@@ -75,19 +74,19 @@ function About() {
         <div className="container-ehed grid gap-6 md:grid-cols-2">
           <Reveal>
             <div className="card-elevated h-full p-8">
-              <p className="eyebrow">Vision</p>
+              <p className="eyebrow">رؤيتنا</p>
               <p className="mt-4 text-xl leading-relaxed text-[var(--navy)]">
-                To become a trusted regional gateway connecting East Africa with Middle East and
-                North African business markets.
+                أن نصبح البوابة الإقليمية الموثوقة التي تربط شرق أفريقيا بأسواق الشرق الأوسط وشمال
+                أفريقيا.
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="card-elevated h-full p-8">
-              <p className="eyebrow">Mission</p>
+              <p className="eyebrow">رسالتنا</p>
               <p className="mt-4 text-xl leading-relaxed text-[var(--navy)]">
-                To provide efficient trade and business development solutions that support companies
-                entering and expanding across East African markets.
+                تقديم حلول تجارية وتطويرية فعّالة تدعم الشركات في دخول أسواق شرق أفريقيا والتوسع
+                فيها.
               </p>
             </div>
           </Reveal>
@@ -96,7 +95,7 @@ function About() {
 
       <section className="py-20 lg:py-28">
         <div className="container-ehed">
-          <SectionHeading eyebrow="Core Values" title="What we stand for" align="center" />
+          <SectionHeading eyebrow="قيمنا الأساسية" title="ما نؤمن به" align="center" />
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {VALUES.map((value, i) => (
               <Reveal key={value} delay={i * 0.05}>
@@ -115,7 +114,7 @@ function About() {
           <Reveal>
             <img
               src={logisticsImg}
-              alt="Cargo containers and trucks at an East African terminal"
+              alt="حاويات وشاحنات شحن في محطة بشرق أفريقيا"
               width={1400}
               height={900}
               loading="lazy"
@@ -124,17 +123,17 @@ function About() {
           </Reveal>
           <div>
             <SectionHeading
-              eyebrow="Business Model"
-              title="Flexible, partnership-driven, regionally present"
-              intro="Rather than a rigid structure, EHED operates as an extension of your team — combining local presence in Kigali with a network of partners across East Africa and MENA."
+              eyebrow="نموذج العمل"
+              title="مرن، قائم على الشراكة، وحاضر إقليمياً"
+              intro="بدلاً من هيكل جامد، تعمل EHED كامتداد لفريقك — بحضور محلي في كيغالي وشبكة شركاء عبر شرق أفريقيا والشرق الأوسط وشمال أفريقيا."
             />
             <Reveal delay={0.1}>
               <ul className="mt-6 space-y-3">
                 {[
-                  "Local presence in Rwanda with regional partner network",
-                  "Project-based and retainer engagement models",
-                  "Direct coordination across sourcing, logistics and representation",
-                  "Transparent reporting to international partners",
+                  "حضور محلي في رواندا مع شبكة شركاء إقليمية",
+                  "نماذج تعاقد بالمشروع أو بعقود شهرية",
+                  "تنسيق مباشر للتوريد واللوجستيات والتمثيل التجاري",
+                  "تقارير شفافة للشركاء الدوليين",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-[var(--navy)]">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />

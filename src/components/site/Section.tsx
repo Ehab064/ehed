@@ -27,13 +27,13 @@ export function SectionHeading({
   eyebrow,
   title,
   intro,
-  align = "left",
+  align = "start",
   invert = false,
 }: {
   eyebrow: string;
   title: string;
   intro?: string;
-  align?: "left" | "center";
+  align?: "start" | "center";
   invert?: boolean;
 }) {
   return (
@@ -68,12 +68,12 @@ export function PageHero({
     <section className="surface-navy relative overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-25 blur-3xl"
+        className="pointer-events-none absolute -end-24 -top-24 h-96 w-96 rounded-full opacity-25 blur-3xl"
         style={{ background: "var(--gradient-teal)" }}
       />
       <div className="container-ehed relative py-20 lg:py-28">
         <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl text-4xl leading-[1.08] text-white sm:text-5xl lg:text-6xl">{title}</h1>
+        <h1 className="mt-4 max-w-4xl text-4xl leading-[1.2] text-white sm:text-5xl lg:text-6xl">{title}</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">{intro}</p>
       </div>
     </section>
