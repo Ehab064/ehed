@@ -7,8 +7,8 @@ export function WhatsAppButton() {
       href={`https://wa.me/${COMPANY.phoneHref.replace(/\D/g, "")}`}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat with EHED on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex h-13 w-13 items-center justify-center rounded-full bg-[var(--teal)] p-3.5 text-[var(--navy-deep)] shadow-[var(--shadow-lift)] transition-transform hover:scale-105"
+      aria-label="تواصل مع EHED عبر واتساب"
+      className="fixed bottom-5 end-5 z-50 inline-flex h-13 w-13 items-center justify-center rounded-full bg-[var(--teal)] p-3.5 text-[var(--navy-deep)] shadow-[var(--shadow-lift)] transition-transform hover:scale-105"
     >
       <MessageCircle className="h-6 w-6" />
     </a>

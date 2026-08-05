@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpLeft, Check } from "lucide-react";
 import { MARKETS, type Market } from "@/lib/site-data";
 
 export function MarketsInteractive() {
@@ -10,8 +10,8 @@ export function MarketsInteractive() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-      <div className="relative overflow-hidden rounded-[var(--radius-3xl)] border border-white/10 bg-[var(--navy-deep)] p-5 sm:p-8">
-        <svg viewBox="24 4 68 68" className="h-auto w-full" role="img" aria-label="Map of EHED connected markets">
+      <div dir="ltr" className="relative overflow-hidden rounded-[var(--radius-3xl)] border border-white/10 bg-[var(--navy-deep)] p-5 sm:p-8">
+        <svg viewBox="24 4 68 68" className="h-auto w-full" role="img" aria-label="خريطة الأسواق المرتبطة بـ EHED">
           <defs>
             <radialGradient id="glow" cx="50%" cy="50%">
               <stop offset="0%" stopColor="var(--teal)" stopOpacity="0.35" />
@@ -56,17 +56,18 @@ export function MarketsInteractive() {
                   y={m.y - 5.5}
                   textAnchor="middle"
                   fontSize="3"
+                  direction="rtl"
                   fill={isActive ? "#ffffff" : "rgba(255,255,255,0.6)"}
                   className="select-none"
                 >
-                  {m.name.toUpperCase()}
+                  {m.name}
                 </text>
               </g>
             );
           })}
         </svg>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div dir="rtl" className="mt-6 flex flex-wrap gap-2">
           {MARKETS.map((m) => (
             <button
               key={m.code}
@@ -105,7 +106,7 @@ export function MarketsInteractive() {
             ))}
           </ul>
           <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-[var(--teal)]">
-            Trade corridor active <ArrowUpRight className="h-4 w-4" />
+            ممر تجاري نشط <ArrowUpLeft className="h-4 w-4" />
           </div>
         </motion.div>
       </AnimatePresence>
