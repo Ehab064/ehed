@@ -7,12 +7,13 @@ import {
   Truck,
   Coffee,
 } from "lucide-react";
-import { SERVICES } from "@/lib/site-data";
+import { useSiteData } from "@/lib/site-data";
 import { Reveal } from "./Section";
 
 const ICONS = [Handshake, Compass, PackageSearch, Building2, TrendingUp, Truck, Coffee];
 
 export function ServicesGrid({ limit }: { limit?: number }) {
+  const { SERVICES } = useSiteData();
   const items = limit ? SERVICES.slice(0, limit) : SERVICES;
 
   return (
