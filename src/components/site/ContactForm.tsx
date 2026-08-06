@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
+import { useI18n } from "@/lib/i18n";
 
 export function ContactForm() {
   const [sending, setSending] = useState(false);
+  const { L, lang } = useI18n();
 
   return (
     <form
@@ -15,42 +17,45 @@ export function ContactForm() {
         setTimeout(() => {
           setSending(false);
           form.reset();
-          toast.success("شكراً لك — تم استلام طلبك بنجاح.", {
-            description: "سيتواصل معك فريقنا في كيغالي في أقرب وقت.",
+          toast.success(L("شكراً لك — تم استلام طلبك بنجاح.", "Thank you — your request has been received."), {
+            description: L(
+              "سيتواصل معك فريقنا في كيغالي في أقرب وقت.",
+              "Our Kigali team will be in touch with you shortly.",
+            ),
           });
         }, 600);
       }}
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="الاسم الكامل" name="name" placeholder="اسمك" />
-        <Field label="الشركة" name="company" placeholder="اسم الشركة" required={false} />
-        <Field label="البريد الإلكتروني" name="email" type="email" placeholder="you@company.com" />
-        <Field label="رقم الهاتف" name="phone" type="tel" placeholder="+250 ..." required={false} />
+        <Field label={L("الاسم الكامل", "Full name")} name="name" placeholder={L("اسمك", "Your name")} />
+        <Field label={L("الشركة", "Company")} name="company" placeholder={L("اسم الشركة", "Company name")} required={false} />
+        <Field label={L("البريد الإلكتروني", "Email")} name="email" type="email" placeholder="you@company.com" />
+        <Field label={L("رقم الهاتف", "Phone number")} name="phone" type="tel" placeholder="+250 ..." required={false} />
       </div>
 
       <label className="grid gap-2 text-sm font-medium text-[var(--navy)]">
-        مجال الاهتمام
+        {L("مجال الاهتمام", "Area of interest")}
         <select
           name="interest"
           className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-[var(--teal)]"
         >
-          <option>تيسير التجارة</option>
-          <option>دعم دخول الأسواق</option>
-          <option>توريد الموردين والمشتريات</option>
-          <option>التمثيل التجاري</option>
-          <option>دعم التوسع الإقليمي</option>
-          <option>تنسيق الخدمات اللوجستية</option>
-          <option>تصدير البن والشاي</option>
+          <option>{L("تيسير التجارة", "Trade facilitation")}</option>
+          <option>{L("دعم دخول الأسواق", "Market entry support")}</option>
+          <option>{L("توريد الموردين والمشتريات", "Sourcing & procurement")}</option>
+          <option>{L("التمثيل التجاري", "Business representation")}</option>
+          <option>{L("دعم التوسع الإقليمي", "Regional expansion support")}</option>
+          <option>{L("تنسيق الخدمات اللوجستية", "Logistics coordination")}</option>
+          <option>{L("تصدير البن والشاي", "Coffee & tea export")}</option>
         </select>
       </label>
 
       <label className="grid gap-2 text-sm font-medium text-[var(--navy)]">
-        الرسالة
+        {L("الرسالة", "Message")}
         <textarea
           name="message"
           required
           rows={5}
-          placeholder="أخبرنا عن احتياجات عملك..."
+          placeholder={L("أخبرنا عن احتياجات عملك...", "Tell us about your business needs...")}
           className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-[var(--teal)]"
         />
       </label>
@@ -60,7 +65,8 @@ export function ContactForm() {
         disabled={sending}
         className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--navy)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--teal)] hover:text-[var(--navy-deep)] disabled:opacity-60"
       >
-        {sending ? "جارٍ الإرسال..." : "إرسال الطلب"} <Send className="h-4 w-4 -scale-x-100" />
+        {sending ? L("جارٍ الإرسال...", "Sending...") : L("إرسال الطلب", "Submit request")}{" "}
+        <Send className={lang === "ar" ? "h-4 w-4 -scale-x-100" : "h-4 w-4"} />
       </button>
     </form>
   );

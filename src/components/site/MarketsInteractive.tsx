@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUpLeft, Check } from "lucide-react";
-import { MARKETS, type Market } from "@/lib/site-data";
+import { ArrowUpLeft, ArrowUpRight, Check } from "lucide-react";
+import { useSiteData, type Market } from "@/lib/site-data";
+import { useI18n } from "@/lib/i18n";
 
 export function MarketsInteractive() {
+  const { MARKETS } = useSiteData();
+  const { L, lang } = useI18n();
   const [activeCode, setActiveCode] = useState<string>(MARKETS[0]!.code);
   const active = MARKETS.find((m) => m.code === activeCode) as Market;
   const hub = MARKETS.find((m) => m.hub) as Market;
+  const ArrowIcon = lang === "ar" ? ArrowUpLeft : ArrowUpRight;
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
       <div dir="ltr" className="relative overflow-hidden rounded-[var(--radius-3xl)] border border-white/10 bg-[var(--navy-deep)] p-5 sm:p-8">
-        <svg viewBox="24 4 68 68" className="h-auto w-full" role="img" aria-label="خريطة الأسواق المرتبطة بـ EHED">
+        <svg viewBox="24 4 68 68" className="h-auto w-full" role="img" aria-label={L("خريطة الأسواق المرتبطة بـ EHED", "Map of EHED's connected markets")}>
           <defs>
             <radialGradient id="glow" cx="50%" cy="50%">
               <stop offset="0%" stopColor="var(--teal)" stopOpacity="0.35" />
@@ -56,7 +60,7 @@ export function MarketsInteractive() {
                   y={m.y - 5.5}
                   textAnchor="middle"
                   fontSize="3"
-                  direction="rtl"
+                  direction={lang === "ar" ? "rtl" : "ltr"}
                   fill={isActive ? "#ffffff" : "rgba(255,255,255,0.6)"}
                   className="select-none"
                 >
@@ -67,7 +71,7 @@ export function MarketsInteractive() {
           })}
         </svg>
 
-        <div dir="rtl" className="mt-6 flex flex-wrap gap-2">
+        <div dir={lang === "ar" ? "rtl" : "ltr"} className="mt-6 flex flex-wrap gap-2">
           {MARKETS.map((m) => (
             <button
               key={m.code}
@@ -106,7 +110,7 @@ export function MarketsInteractive() {
             ))}
           </ul>
           <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-[var(--teal)]">
-            ممر تجاري نشط <ArrowUpLeft className="h-4 w-4" />
+            {L("ممر تجاري نشط", "Active trade corridor")} <ArrowIcon className="h-4 w-4" />
           </div>
         </motion.div>
       </AnimatePresence>
