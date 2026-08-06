@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowLeft, ChevronDown, Globe2, Handshake, TrendingUp, Boxes, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown, Globe2, Handshake, TrendingUp, Boxes, Users } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import aboutImg from "@/assets/about-meeting.jpg";
 import coffeeImg from "@/assets/coffee-tea.jpg";
@@ -8,7 +8,9 @@ import { Reveal, SectionHeading } from "@/components/site/Section";
 import { ServicesGrid } from "@/components/site/ServicesGrid";
 import { MarketsInteractive } from "@/components/site/MarketsInteractive";
 import { CtaBand } from "@/components/site/CtaBand";
-import { STATS, WHY_RWANDA, COMPANY } from "@/lib/site-data";
+import { COMPANY } from "@/lib/site-data";
+import { useSiteData } from "@/lib/site-data";
+import { useI18n } from "@/lib/i18n";
 
 const title = "EHED — بوابتك التجارية الإقليمية في شرق أفريقيا";
 const description =
@@ -52,13 +54,17 @@ export const Route = createFileRoute("/")({
 const STAT_ICONS = [Globe2, Handshake, TrendingUp, Boxes, Users];
 
 function Home() {
+  const { L, lang } = useI18n();
+  const { STATS, WHY_RWANDA } = useSiteData();
+  const ArrowIcon = lang === "ar" ? ArrowLeft : ArrowRight;
+
   return (
     <>
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-[var(--navy-deep)]">
         <img
           src={heroImg}
-          alt="أفق مدينة كيغالي عند الغروب"
+          alt={L("أفق مدينة كيغالي عند الغروب", "Kigali skyline at sunset")}
           width={1920}
           height={1088}
           className="absolute inset-0 h-full w-full object-cover opacity-45"
@@ -78,7 +84,7 @@ function Home() {
             transition={{ duration: 0.6 }}
             className="eyebrow"
           >
-            التجارة الإقليمية • تطوير الأعمال • التوسع في الأسواق
+            {L("التجارة الإقليمية • تطوير الأعمال • التوسع في الأسواق", "Regional Trade • Business Development • Market Expansion")}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 26 }}
@@ -86,8 +92,8 @@ function Home() {
             transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="mt-5 max-w-4xl text-4xl leading-[1.25] text-white sm:text-6xl lg:text-7xl"
           >
-            بوابتك التجارية الإقليمية{" "}
-            <span className="text-[var(--teal)]">في شرق أفريقيا</span>
+            {L("بوابتك التجارية الإقليمية", "Your regional trade gateway")}{" "}
+            <span className="text-[var(--teal)]">{L("في شرق أفريقيا", "in East Africa")}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -95,7 +101,10 @@ function Home() {
             transition={{ duration: 0.7, delay: 0.18 }}
             className="mt-6 max-w-xl text-lg leading-relaxed text-white/75"
           >
-            نربط أسواق شرق أفريقيا بشركاء الأعمال في الشرق الأوسط وشمال أفريقيا.
+            {L(
+              "نربط أسواق شرق أفريقيا بشركاء الأعمال في الشرق الأوسط وشمال أفريقيا.",
+              "Connecting East African markets with business partners across the Middle East and North Africa."
+            )}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,13 +116,13 @@ function Home() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-[var(--teal)] px-7 py-4 font-semibold text-[var(--navy-deep)] transition-transform hover:-translate-y-0.5"
             >
-              تواصل معنا <ArrowLeft className="h-4 w-4" />
+              {L("تواصل معنا", "Contact us")} <ArrowIcon className="h-4 w-4" />
             </Link>
             <Link
               to="/services"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-4 font-semibold text-white transition-colors hover:border-[var(--teal)] hover:text-[var(--teal)]"
             >
-              استكشف خدماتنا <ArrowLeft className="h-4 w-4" />
+              {L("استكشف خدماتنا", "Explore our services")} <ArrowIcon className="h-4 w-4" />
             </Link>
           </motion.div>
 
@@ -124,7 +133,7 @@ function Home() {
             transition={{ duration: 0.8, delay: 0.36 }}
             className="mt-16 grid grid-cols-2 divide-x divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/15 bg-[var(--navy-deep)]/75 backdrop-blur-md sm:grid-cols-3 lg:grid-cols-5 lg:divide-y-0"
           >
-            {STATS.concat([{ value: "+1M", label: "طن تمت مناولته" }]).map((s, i) => {
+            {STATS.concat([{ value: "+1M", label: L("طن تمت مناولته", "tons handled") }]).map((s, i) => {
               const Icon = STAT_ICONS[i % STAT_ICONS.length]!;
               return (
                 <div key={s.label} className="flex items-center gap-3 px-5 py-6">
@@ -150,7 +159,7 @@ function Home() {
           <Reveal>
             <img
               src={aboutImg}
-              alt="اجتماع شركاء أعمال في مقر بكيغالي"
+              alt={L("اجتماع شركاء أعمال في مقر بكيغالي", "Business partners meeting at a Kigali office")}
               width={1400}
               height={1000}
               loading="lazy"
@@ -159,21 +168,28 @@ function Home() {
           </Reveal>
           <div>
             <SectionHeading
-              eyebrow="عن EHED"
-              title="بوابة مقرها رواندا بين شرق أفريقيا وأسواق الشرق الأوسط وشمال أفريقيا"
-              intro="إكسبيريانس هاوس (EHED) شركة تجارة وتطوير أعمال إقليمية تركز على ربط أسواق شرق أفريقيا بشركاء في الشرق الأوسط وشمال أفريقيا."
+              eyebrow={L("عن EHED", "About EHED")}
+              title={L(
+                "بوابة مقرها رواندا بين شرق أفريقيا وأسواق الشرق الأوسط وشمال أفريقيا",
+                "A Rwanda-based gateway between East Africa and MENA markets"
+              )}
+              intro={L(
+                "إكسبيريانس هاوس (EHED) شركة تجارة وتطوير أعمال إقليمية تركز على ربط أسواق شرق أفريقيا بشركاء في الشرق الأوسط وشمال أفريقيا.",
+                "Experience House (EHED) is a regional trade and business development company focused on connecting East African markets with partners across the Middle East and North Africa."
+              )}
             />
             <Reveal delay={0.1}>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                نقدّم خدمات تيسير التجارة والتوريد والمشتريات ودعم دخول الأسواق والتمثيل التجاري
-                وتنسيق الخدمات اللوجستية للشركات الساعية للتوسع في شرق أفريقيا — كما ندعم تصدير البن
-                والشاي الفاخر من شرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية.
+                {L(
+                  "نقدّم خدمات تيسير التجارة والتوريد والمشتريات ودعم دخول الأسواق والتمثيل التجاري وتنسيق الخدمات اللوجستية للشركات الساعية للتوسع في شرق أفريقيا — كما ندعم تصدير البن والشاي الفاخر من شرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية.",
+                  "We provide trade facilitation, sourcing and procurement, market-entry support, commercial representation, and logistics coordination for companies expanding into East Africa — while also supporting the export of premium East African coffee and tea to Egypt, Saudi Arabia, and regional markets."
+                )}
               </p>
               <Link
                 to="/about"
                 className="mt-7 inline-flex items-center gap-2 font-semibold text-[var(--teal)] hover:gap-3 transition-all"
               >
-                المزيد عنا <ArrowLeft className="h-4 w-4" />
+                {L("المزيد عنا", "More about us")} <ArrowIcon className="h-4 w-4" />
               </Link>
             </Reveal>
           </div>
@@ -184,9 +200,12 @@ function Home() {
       <section className="bg-[var(--sand)] py-20 lg:py-28">
         <div className="container-ehed">
           <SectionHeading
-            eyebrow="خدماتنا"
-            title="حلول أعمال مصمّمة للتجارة العابرة للحدود"
-            intro="خدمات عملية قائمة على الشراكة تبسّط العمل عبر أسواق شرق أفريقيا والشرق الأوسط."
+            eyebrow={L("خدماتنا", "Our services")}
+            title={L("حلول أعمال مصمّمة للتجارة العابرة للحدود", "Business solutions built for cross-border trade")}
+            intro={L(
+              "خدمات عملية قائمة على الشراكة تبسّط العمل عبر أسواق شرق أفريقيا والشرق الأوسط.",
+              "Practical, partnership-driven services that simplify doing business across East African and Middle Eastern markets."
+            )}
             align="center"
           />
           <div className="mt-14">
@@ -198,7 +217,7 @@ function Home() {
                 to="/services"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--navy)]/15 px-7 py-3.5 font-semibold text-[var(--navy)] transition-colors hover:border-[var(--teal)] hover:text-[var(--teal)]"
               >
-                عرض كل الخدمات <ArrowLeft className="h-4 w-4" />
+                {L("عرض كل الخدمات", "View all services")} <ArrowIcon className="h-4 w-4" />
               </Link>
             </div>
           </Reveal>
@@ -209,9 +228,12 @@ function Home() {
       <section className="py-20 lg:py-28">
         <div className="container-ehed">
           <SectionHeading
-            eyebrow="الأسواق التي نربطها"
-            title="سبعة أسواق. ممر تجاري واحد منسّق."
-            intro="اختر سوقاً لاستكشاف كيفية عمل EHED عبر شرق أفريقيا وشمال أفريقيا والخليج."
+            eyebrow={L("الأسواق التي نربطها", "Markets we connect")}
+            title={L("سبعة أسواق. ممر تجاري واحد منسّق.", "Seven markets. One coordinated trade corridor.")}
+            intro={L(
+              "اختر سوقاً لاستكشاف كيفية عمل EHED عبر شرق أفريقيا وشمال أفريقيا والخليج.",
+              "Select a market to explore how EHED operates across East Africa, North Africa, and the Gulf."
+            )}
           />
           <div className="mt-14">
             <MarketsInteractive />
@@ -223,8 +245,8 @@ function Home() {
       <section className="bg-[var(--sand)] py-20 lg:py-28">
         <div className="container-ehed">
           <SectionHeading
-            eyebrow="لماذا رواندا؟"
-            title="قاعدة مستقرة للأعمال الإقليمية"
+            eyebrow={L("لماذا رواندا؟", "Why Rwanda?")}
+            title={L("قاعدة مستقرة للأعمال الإقليمية", "A stable base for regional business")}
             align="center"
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -246,23 +268,29 @@ function Home() {
         <div className="container-ehed grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
-              eyebrow="تصدير البن والشاي"
-              title="منشأ شرق أفريقي فاخر يصل إلى الشرق الأوسط وشمال أفريقيا"
-              intro="بن وشاي من رواندا وشرق أفريقيا يتم توريده من مزارع وتعاونيات موثوقة وتجهيزه للتصدير إلى مصر والسعودية والأسواق الإقليمية."
+              eyebrow={L("تصدير البن والشاي", "Coffee & tea export")}
+              title={L(
+                "منشأ شرق أفريقي فاخر يصل إلى الشرق الأوسط وشمال أفريقيا",
+                "Premium East African origin, delivered to the Middle East and North Africa"
+              )}
+              intro={L(
+                "بن وشاي من رواندا وشرق أفريقيا يتم توريده من مزارع وتعاونيات موثوقة وتجهيزه للتصدير إلى مصر والسعودية والأسواق الإقليمية.",
+                "Coffee and tea from Rwanda and East Africa sourced from trusted farms and cooperatives, and prepared for export to Egypt, Saudi Arabia, and regional markets."
+              )}
             />
             <Reveal delay={0.1}>
               <Link
                 to="/coffee-tea"
                 className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--navy)] px-7 py-3.5 font-semibold text-white transition-colors hover:bg-[var(--teal)] hover:text-[var(--navy-deep)]"
               >
-                استكشف البن والشاي <ArrowLeft className="h-4 w-4" />
+                {L("استكشف البن والشاي", "Explore coffee & tea")} <ArrowIcon className="h-4 w-4" />
               </Link>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <img
               src={coffeeImg}
-              alt="حبوب البن الرواندي بجوار مزرعة شاي"
+              alt={L("حبوب البن الرواندي بجوار مزرعة شاي", "Rwandan coffee beans beside a tea plantation")}
               width={1600}
               height={1100}
               loading="lazy"
