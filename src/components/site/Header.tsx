@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ArrowLeft } from "lucide-react";
+import { Menu, X, ArrowLeft, ArrowRight } from "lucide-react";
 import logo from "@/assets/ehed-logo.png";
-import { NAV } from "@/lib/site-data";
+import { useSiteData } from "@/lib/site-data";
+import { useI18n } from "@/lib/i18n";
+import { LanguageToggle } from "@/components/site/LanguageToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { NAV } = useSiteData();
+  const { L, lang } = useI18n();
+  const Arrow = lang === "ar" ? ArrowLeft : ArrowRight;
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[var(--navy-deep)]/95 backdrop-blur">
@@ -13,7 +18,7 @@ export function Header() {
         <Link to="/" className="flex min-w-0 items-center" onClick={() => setOpen(false)}>
           <img
             src={logo}
-            alt="إكسبيريانس هاوس (EHED) — بوابتك التجارية الإقليمية"
+            alt={L("إكسبيريانس هاوس (EHED) — بوابتك التجارية الإقليمية", "Experience House (EHED) — Your Regional Business Gateway")}
             className="h-10 w-auto shrink-0 lg:h-12"
             width={470}
             height={250}
@@ -31,22 +36,26 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <LanguageToggle />
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-[var(--teal)] px-5 py-2.5 text-sm font-semibold text-[var(--navy-deep)] transition-transform hover:-translate-y-0.5"
           >
-            تواصل معنا <ArrowLeft className="h-4 w-4" />
+            {L("تواصل معنا", "Contact us")} <Arrow className="h-4 w-4" />
           </Link>
         </nav>
 
-        <button
-          type="button"
-          aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
-          onClick={() => setOpen((v) => !v)}
-          className="shrink-0 rounded-md p-2 text-white lg:hidden"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageToggle />
+          <button
+            type="button"
+            aria-label={open ? L("إغلاق القائمة", "Close menu") : L("فتح القائمة", "Open menu")}
+            onClick={() => setOpen((v) => !v)}
+            className="shrink-0 rounded-md p-2 text-white"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {open ? (
