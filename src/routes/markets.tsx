@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Reveal, SectionHeading } from "@/components/site/Section";
 import { MarketsInteractive } from "@/components/site/MarketsInteractive";
 import { CtaBand } from "@/components/site/CtaBand";
-import { MARKETS } from "@/lib/site-data";
+import { useSiteData } from "@/lib/site-data";
+import { useI18n } from "@/lib/i18n";
 
 const title = "الأسواق — شرق أفريقيا ومصر والسعودية | EHED";
 const description =
@@ -26,12 +27,17 @@ export const Route = createFileRoute("/markets")({
 });
 
 function Markets() {
+  const { L } = useI18n();
+  const { MARKETS } = useSiteData();
   return (
     <>
       <PageHero
-        eyebrow="الأسواق التي نربطها"
-        title="ممر واحد من شرق أفريقيا إلى الخليج"
-        intro="استكشف الأسواق السبعة التي تعمل فيها EHED وتوردّ منها وتمثّل فيها شركاءها الدوليين."
+        eyebrow={L("الأسواق التي نربطها", "Markets We Connect")}
+        title={L("ممر واحد من شرق أفريقيا إلى الخليج", "One Corridor From East Africa to the Gulf")}
+        intro={L(
+          "استكشف الأسواق السبعة التي تعمل فيها EHED وتوردّ منها وتمثّل فيها شركاءها الدوليين.",
+          "Explore the seven markets where EHED operates, sources, and represents its international partners."
+        )}
       />
 
       <section className="py-20 lg:py-28">
@@ -42,7 +48,7 @@ function Markets() {
 
       <section className="bg-[var(--sand)] py-20 lg:py-28">
         <div className="container-ehed">
-          <SectionHeading eyebrow="دول التركيز" title="أين نعمل" align="center" />
+          <SectionHeading eyebrow={L("دول التركيز", "Focus Countries")} title={L("أين نعمل", "Where We Operate")} align="center" />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {MARKETS.map((m, i) => (
               <Reveal key={m.code} delay={i * 0.05}>
