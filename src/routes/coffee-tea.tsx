@@ -6,9 +6,9 @@ import { PageHero, Reveal, SectionHeading } from "@/components/site/Section";
 import { CtaBand } from "@/components/site/CtaBand";
 import { useI18n } from "@/lib/i18n";
 
-const title = "تصدير البن والشاي — منشأ شرق أفريقي فاخر | EHED";
+const title = "Coffee & Tea Export — Premium East African Origin | EHED";
 const description =
-  "تدعم EHED تصدير البن والشاي الفاخر من رواندا وشرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية، من التوريد وحتى الشحن.";
+  "EHED supports the export of premium coffee and tea from Rwanda and East Africa to Egypt, Saudi Arabia and regional markets.";
 
 export const Route = createFileRoute("/coffee-tea")({
   component: CoffeeTea,
@@ -19,12 +19,12 @@ export const Route = createFileRoute("/coffee-tea")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/coffee-tea" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/coffee-tea" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex, follow" },
     ],
-    links: [{ rel: "canonical", href: "/coffee-tea" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/coffee-tea" }],
   }),
 });
 

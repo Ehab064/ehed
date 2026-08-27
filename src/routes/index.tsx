@@ -11,9 +11,9 @@ import { COMPANY } from "@/lib/site-data";
 import { useSiteData } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
 
-const title = "EHED — بوابتك التجارية الإقليمية في شرق أفريقيا";
+const title = "EHED — Your Regional Business Gateway in East Africa";
 const description =
-  "تربط إكسبيريانس هاوس (EHED) أسواق شرق أفريقيا بشركاء في الشرق الأوسط وشمال أفريقيا عبر تيسير التجارة والتوريد والتمثيل التجاري والتصدير.";
+  "Experience House (EHED) is a Rwanda-based regional trade and business development company connecting East Africa with the Middle East and North Africa.";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -24,11 +24,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -4,9 +4,9 @@ import { ServicesGrid } from "@/components/site/ServicesGrid";
 import { CtaBand } from "@/components/site/CtaBand";
 import { useI18n } from "@/lib/i18n";
 
-const title = "الخدمات — تيسير التجارة ودعم دخول الأسواق | EHED";
+const title = "Services — Market Entry, Representation & Trade Facilitation | EHED";
 const description =
-  "تيسير التجارة، دعم دخول الأسواق، توريد الموردين، التمثيل التجاري، التوسع الإقليمي، تنسيق الخدمات اللوجستية وتصدير البن والشاي من EHED.";
+  "Regional business development, market entry support, business representation, strategic partnerships, trade facilitation, sourcing and procurement by EHED.";
 
 export const Route = createFileRoute("/services")({
   component: Services,
@@ -17,11 +17,11 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/services" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/services" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/services" }],
   }),
 });
 
