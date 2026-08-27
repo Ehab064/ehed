@@ -28,10 +28,13 @@ export function ContactForm() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label={L("الاسم الكامل", "Full name")} name="name" placeholder={L("اسمك", "Your name")} />
-        <Field label={L("الشركة", "Company")} name="company" placeholder={L("اسم الشركة", "Company name")} required={false} />
+        <Field label={L("الشركة", "Company")} name="company" placeholder={L("اسم الشركة", "Company name")} />
+        <Field label={L("المسمى الوظيفي", "Job title")} name="jobTitle" placeholder={L("مثال: مدير التطوير", "e.g. Business Development Manager")} required={false} />
+        <Field label={L("الدولة", "Country")} name="country" placeholder={L("الدولة", "Country")} />
         <Field label={L("البريد الإلكتروني", "Email")} name="email" type="email" placeholder="you@company.com" />
         <Field label={L("رقم الهاتف", "Phone number")} name="phone" type="tel" placeholder="+250 ..." required={false} />
       </div>
+
 
       <label className="grid gap-2 text-sm font-medium text-[var(--navy)]">
         {L("مجال الاهتمام", "Area of interest")}
