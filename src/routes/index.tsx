@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import aboutImg from "@/assets/about-meeting.jpg";
-import coffeeImg from "@/assets/coffee-tea.jpg";
 import { Reveal, SectionHeading } from "@/components/site/Section";
 import { ServicesGrid } from "@/components/site/ServicesGrid";
 import { MarketsInteractive } from "@/components/site/MarketsInteractive";
@@ -54,7 +53,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const { L, lang } = useI18n();
-  const { WHY_RWANDA } = useSiteData();
+  const { WHY_RWANDA, WHY_EHED } = useSiteData();
   const ArrowIcon = lang === "ar" ? ArrowLeft : ArrowRight;
 
   return (
