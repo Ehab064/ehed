@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight, ChevronDown, Globe2, Handshake, TrendingUp, Boxes, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import aboutImg from "@/assets/about-meeting.jpg";
 import coffeeImg from "@/assets/coffee-tea.jpg";
