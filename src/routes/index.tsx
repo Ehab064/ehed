@@ -51,11 +51,10 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const STAT_ICONS = [Globe2, Handshake, TrendingUp, Boxes, Users];
 
 function Home() {
   const { L, lang } = useI18n();
-  const { STATS, WHY_RWANDA } = useSiteData();
+  const { WHY_RWANDA } = useSiteData();
   const ArrowIcon = lang === "ar" ? ArrowLeft : ArrowRight;
 
   return (
