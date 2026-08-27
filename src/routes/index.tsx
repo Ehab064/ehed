@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight, ChevronDown, Globe2, Handshake, TrendingUp, Boxes, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import aboutImg from "@/assets/about-meeting.jpg";
 import coffeeImg from "@/assets/coffee-tea.jpg";
@@ -51,11 +51,10 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const STAT_ICONS = [Globe2, Handshake, TrendingUp, Boxes, Users];
 
 function Home() {
   const { L, lang } = useI18n();
-  const { STATS, WHY_RWANDA } = useSiteData();
+  const { WHY_RWANDA } = useSiteData();
   const ArrowIcon = lang === "ar" ? ArrowLeft : ArrowRight;
 
   return (
@@ -126,26 +125,8 @@ function Home() {
             </Link>
           </motion.div>
 
-          {/* Stats bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.36 }}
-            className="mt-16 grid grid-cols-2 divide-x divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/15 bg-[var(--navy-deep)]/75 backdrop-blur-md sm:grid-cols-3 lg:grid-cols-5 lg:divide-y-0"
-          >
-            {STATS.concat([{ value: "+1M", label: L("طن تمت مناولته", "tons handled") }]).map((s, i) => {
-              const Icon = STAT_ICONS[i % STAT_ICONS.length]!;
-              return (
-                <div key={s.label} className="flex items-center gap-3 px-5 py-6">
-                  <Icon className="h-7 w-7 shrink-0 text-[var(--teal)]" strokeWidth={1.4} />
-                  <div className="min-w-0">
-                    <p className="text-2xl font-semibold text-white">{s.value}</p>
-                    <p className="truncate text-xs text-white/60">{s.label}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div>
+
+
 
           <div className="mt-12 flex justify-center">
             <ChevronDown className="h-6 w-6 animate-bounce text-white/40" />
