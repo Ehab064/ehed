@@ -244,42 +244,27 @@ function Home() {
         </div>
       </section>
 
-      {/* COFFEE & TEA */}
+      {/* WHY EHED */}
       <section className="py-20 lg:py-28">
-        <div className="container-ehed grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <SectionHeading
-              eyebrow={L("تصدير البن والشاي", "Coffee & tea export")}
-              title={L(
-                "منشأ شرق أفريقي فاخر يصل إلى الشرق الأوسط وشمال أفريقيا",
-                "Premium East African origin, delivered to the Middle East and North Africa"
-              )}
-              intro={L(
-                "بن وشاي من رواندا وشرق أفريقيا يتم توريده من مزارع وتعاونيات موثوقة وتجهيزه للتصدير إلى مصر والسعودية والأسواق الإقليمية.",
-                "Coffee and tea from Rwanda and East Africa sourced from trusted farms and cooperatives, and prepared for export to Egypt, Saudi Arabia, and regional markets."
-              )}
-            />
-            <Reveal delay={0.1}>
-              <Link
-                to="/coffee-tea"
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--navy)] px-7 py-3.5 font-semibold text-white transition-colors hover:bg-[var(--teal)] hover:text-[var(--navy-deep)]"
-              >
-                {L("استكشف البن والشاي", "Explore coffee & tea")} <ArrowIcon className="h-4 w-4" />
-              </Link>
-            </Reveal>
+        <div className="container-ehed">
+          <SectionHeading
+            eyebrow={L("لماذا EHED؟", "Why EHED?")}
+            title={L("شريك إقليمي بفهم عملي للأسواق", "A regional partner with practical market understanding")}
+            align="center"
+          />
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {WHY_EHED.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.06}>
+                <div className="card-elevated h-full p-7">
+                  <h3 className="text-lg text-[var(--navy)]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
-          <Reveal delay={0.1}>
-            <img
-              src={coffeeImg}
-              alt={L("حبوب البن الرواندي بجوار مزرعة شاي", "Rwandan coffee beans beside a tea plantation")}
-              width={1600}
-              height={1100}
-              loading="lazy"
-              className="w-full rounded-[var(--radius-3xl)] object-cover shadow-[var(--shadow-lift)]"
-            />
-          </Reveal>
         </div>
       </section>
+
 
       <CtaBand />
     </>
