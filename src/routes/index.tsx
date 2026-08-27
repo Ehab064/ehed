@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-kigali.jpg";
 import aboutImg from "@/assets/about-meeting.jpg";
-import coffeeImg from "@/assets/coffee-tea.jpg";
 import { Reveal, SectionHeading } from "@/components/site/Section";
 import { ServicesGrid } from "@/components/site/ServicesGrid";
 import { MarketsInteractive } from "@/components/site/MarketsInteractive";
@@ -12,9 +11,9 @@ import { COMPANY } from "@/lib/site-data";
 import { useSiteData } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
 
-const title = "EHED — بوابتك التجارية الإقليمية في شرق أفريقيا";
+const title = "EHED — Your Regional Business Gateway in East Africa";
 const description =
-  "تربط إكسبيريانس هاوس (EHED) أسواق شرق أفريقيا بشركاء في الشرق الأوسط وشمال أفريقيا عبر تيسير التجارة والتوريد والتمثيل التجاري والتصدير.";
+  "Experience House (EHED) is a Rwanda-based regional trade and business development company connecting East Africa with the Middle East and North Africa.";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -25,11 +24,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -54,7 +53,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const { L, lang } = useI18n();
-  const { WHY_RWANDA } = useSiteData();
+  const { WHY_RWANDA, WHY_EHED } = useSiteData();
   const ArrowIcon = lang === "ar" ? ArrowLeft : ArrowRight;
 
   return (
@@ -162,8 +161,8 @@ function Home() {
             <Reveal delay={0.1}>
               <p className="mt-5 leading-relaxed text-muted-foreground">
                 {L(
-                  "نقدّم خدمات تيسير التجارة والتوريد والمشتريات ودعم دخول الأسواق والتمثيل التجاري وتنسيق الخدمات اللوجستية للشركات الساعية للتوسع في شرق أفريقيا — كما ندعم تصدير البن والشاي الفاخر من شرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية.",
-                  "We provide trade facilitation, sourcing and procurement, market-entry support, commercial representation, and logistics coordination for companies expanding into East Africa — while also supporting the export of premium East African coffee and tea to Egypt, Saudi Arabia, and regional markets."
+                  "نقدّم تطوير الأعمال الإقليمي ودعم دخول الأسواق والتمثيل التجاري والشراكات الاستراتيجية وتيسير التجارة والتوريد للشركات العاملة بين شرق أفريقيا والشرق الأوسط.",
+                  "We provide regional business development, market entry support, commercial representation, strategic partnerships, trade facilitation, and sourcing for companies operating between East Africa and the Middle East."
                 )}
               </p>
               <Link
@@ -244,42 +243,27 @@ function Home() {
         </div>
       </section>
 
-      {/* COFFEE & TEA */}
+      {/* WHY EHED */}
       <section className="py-20 lg:py-28">
-        <div className="container-ehed grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <SectionHeading
-              eyebrow={L("تصدير البن والشاي", "Coffee & tea export")}
-              title={L(
-                "منشأ شرق أفريقي فاخر يصل إلى الشرق الأوسط وشمال أفريقيا",
-                "Premium East African origin, delivered to the Middle East and North Africa"
-              )}
-              intro={L(
-                "بن وشاي من رواندا وشرق أفريقيا يتم توريده من مزارع وتعاونيات موثوقة وتجهيزه للتصدير إلى مصر والسعودية والأسواق الإقليمية.",
-                "Coffee and tea from Rwanda and East Africa sourced from trusted farms and cooperatives, and prepared for export to Egypt, Saudi Arabia, and regional markets."
-              )}
-            />
-            <Reveal delay={0.1}>
-              <Link
-                to="/coffee-tea"
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--navy)] px-7 py-3.5 font-semibold text-white transition-colors hover:bg-[var(--teal)] hover:text-[var(--navy-deep)]"
-              >
-                {L("استكشف البن والشاي", "Explore coffee & tea")} <ArrowIcon className="h-4 w-4" />
-              </Link>
-            </Reveal>
+        <div className="container-ehed">
+          <SectionHeading
+            eyebrow={L("لماذا EHED؟", "Why EHED?")}
+            title={L("شريك إقليمي بفهم عملي للأسواق", "A regional partner with practical market understanding")}
+            align="center"
+          />
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {WHY_EHED.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.06}>
+                <div className="card-elevated h-full p-7">
+                  <h3 className="text-lg text-[var(--navy)]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
-          <Reveal delay={0.1}>
-            <img
-              src={coffeeImg}
-              alt={L("حبوب البن الرواندي بجوار مزرعة شاي", "Rwandan coffee beans beside a tea plantation")}
-              width={1600}
-              height={1100}
-              loading="lazy"
-              className="w-full rounded-[var(--radius-3xl)] object-cover shadow-[var(--shadow-lift)]"
-            />
-          </Reveal>
         </div>
       </section>
+
 
       <CtaBand />
     </>

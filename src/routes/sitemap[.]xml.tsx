@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 const BASE_URL = ""; // TODO: set once a domain is configured
 
-const PATHS = ["/", "/about", "/services", "/markets", "/coffee-tea", "/contact"];
+const PATHS = ["/", "/about", "/services", "/markets", "/contact"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

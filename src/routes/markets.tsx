@@ -5,9 +5,9 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { useSiteData } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
 
-const title = "الأسواق — شرق أفريقيا ومصر والسعودية | EHED";
+const title = "Markets — East Africa, Egypt & Saudi Arabia | EHED";
 const description =
-  "تربط EHED رواندا وأوغندا وتنزانيا وكينيا والكونغو الديمقراطية بمصر والسعودية عبر ممر تجاري إقليمي منسّق.";
+  "EHED connects Rwanda, Uganda, Tanzania, Kenya and the DRC with Egypt and Saudi Arabia through a coordinated regional trade corridor.";
 
 export const Route = createFileRoute("/markets")({
   component: Markets,
@@ -18,11 +18,11 @@ export const Route = createFileRoute("/markets")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/markets" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/markets" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/markets" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/markets" }],
   }),
 });
 

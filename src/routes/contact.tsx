@@ -5,9 +5,9 @@ import { ContactForm } from "@/components/site/ContactForm";
 import { COMPANY, useSiteData } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
 
-const title = "تواصل مع EHED — كيغالي، رواندا";
+const title = "Contact EHED — Kigali, Rwanda";
 const description =
-  "تواصل مع إكسبيريانس هاوس (EHED) في إيكازي هاوس، ريميرا، كيغالي، رواندا لطلبات تيسير التجارة والتوريد والتمثيل والتصدير.";
+  "Contact Experience House (EHED) at Ikaze House, Remera, Kigali, Rwanda for trade facilitation, sourcing, representation and market entry inquiries.";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
@@ -18,11 +18,11 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/contact" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/contact" }],
     scripts: [
       {
         type: "application/ld+json",

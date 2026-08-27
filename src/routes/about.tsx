@@ -7,9 +7,9 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { useSiteData } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
 
-const title = "من نحن — التجارة الإقليمية وتطوير الأعمال في رواندا | EHED";
+const title = "About EHED — Regional Trade & Business Development in Rwanda";
 const description =
-  "إكسبيريانس هاوس (EHED) شركة تجارة وتطوير أعمال مقرها رواندا، بنموذج مرن قائم على الشراكة يربط شرق أفريقيا بأسواق الشرق الأوسط وشمال أفريقيا.";
+  "Experience House (EHED) is a Rwanda-based trade and business development company with a flexible, partnership-driven model linking East Africa and MENA markets.";
 
 export const Route = createFileRoute("/about")({
   component: About,
@@ -20,11 +20,11 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_AR" },
-      { property: "og:url", content: "/about" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://ehed.lovable.app/about" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://ehed.lovable.app/about" }],
   }),
 });
 

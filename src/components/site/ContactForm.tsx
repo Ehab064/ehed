@@ -28,10 +28,13 @@ export function ContactForm() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label={L("الاسم الكامل", "Full name")} name="name" placeholder={L("اسمك", "Your name")} />
-        <Field label={L("الشركة", "Company")} name="company" placeholder={L("اسم الشركة", "Company name")} required={false} />
+        <Field label={L("الشركة", "Company")} name="company" placeholder={L("اسم الشركة", "Company name")} />
+        <Field label={L("المسمى الوظيفي", "Job title")} name="jobTitle" placeholder={L("مثال: مدير التطوير", "e.g. Business Development Manager")} required={false} />
+        <Field label={L("الدولة", "Country")} name="country" placeholder={L("الدولة", "Country")} />
         <Field label={L("البريد الإلكتروني", "Email")} name="email" type="email" placeholder="you@company.com" />
         <Field label={L("رقم الهاتف", "Phone number")} name="phone" type="tel" placeholder="+250 ..." required={false} />
       </div>
+
 
       <label className="grid gap-2 text-sm font-medium text-[var(--navy)]">
         {L("مجال الاهتمام", "Area of interest")}
@@ -39,13 +42,14 @@ export function ContactForm() {
           name="interest"
           className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-[var(--teal)]"
         >
-          <option>{L("تيسير التجارة", "Trade facilitation")}</option>
+          <option>{L("تطوير الأعمال الإقليمي", "Regional business development")}</option>
           <option>{L("دعم دخول الأسواق", "Market entry support")}</option>
-          <option>{L("توريد الموردين والمشتريات", "Sourcing & procurement")}</option>
           <option>{L("التمثيل التجاري", "Business representation")}</option>
-          <option>{L("دعم التوسع الإقليمي", "Regional expansion support")}</option>
-          <option>{L("تنسيق الخدمات اللوجستية", "Logistics coordination")}</option>
-          <option>{L("تصدير البن والشاي", "Coffee & tea export")}</option>
+          <option>{L("الشراكات الاستراتيجية", "Strategic partnerships")}</option>
+          <option>{L("تيسير التجارة", "Trade facilitation")}</option>
+          <option>{L("التوريد والمشتريات", "Sourcing & procurement")}</option>
+          <option>{L("الحلول الصناعية والتقنية", "Industrial & technology solutions")}</option>
+          <option>{L("أخرى", "Other")}</option>
         </select>
       </label>
 
@@ -59,6 +63,22 @@ export function ContactForm() {
           className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-[var(--teal)]"
         />
       </label>
+
+      <label className="flex items-start gap-3 text-sm text-muted-foreground">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          className="mt-1 h-4 w-4 shrink-0 accent-[var(--teal)]"
+        />
+        <span>
+          {L(
+            "أوافق على أن تستخدم EHED البيانات المُرسلة للرد على استفساري.",
+            "I agree that EHED may use the information submitted to respond to my inquiry.",
+          )}
+        </span>
+      </label>
+
 
       <button
         type="submit"
