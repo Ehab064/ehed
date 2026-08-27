@@ -161,8 +161,8 @@ function Home() {
             <Reveal delay={0.1}>
               <p className="mt-5 leading-relaxed text-muted-foreground">
                 {L(
-                  "نقدّم خدمات تيسير التجارة والتوريد والمشتريات ودعم دخول الأسواق والتمثيل التجاري وتنسيق الخدمات اللوجستية للشركات الساعية للتوسع في شرق أفريقيا — كما ندعم تصدير البن والشاي الفاخر من شرق أفريقيا إلى مصر والسعودية والأسواق الإقليمية.",
-                  "We provide trade facilitation, sourcing and procurement, market-entry support, commercial representation, and logistics coordination for companies expanding into East Africa — while also supporting the export of premium East African coffee and tea to Egypt, Saudi Arabia, and regional markets."
+                  "نقدّم تطوير الأعمال الإقليمي ودعم دخول الأسواق والتمثيل التجاري والشراكات الاستراتيجية وتيسير التجارة والتوريد للشركات العاملة بين شرق أفريقيا والشرق الأوسط.",
+                  "We provide regional business development, market entry support, commercial representation, strategic partnerships, trade facilitation, and sourcing for companies operating between East Africa and the Middle East."
                 )}
               </p>
               <Link

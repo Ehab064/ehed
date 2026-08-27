@@ -11,7 +11,7 @@ import {
 export type Lang = "ar" | "en";
 
 const STORAGE_KEY = "ehed-lang";
-const DEFAULT_LANG: Lang = "ar";
+const DEFAULT_LANG: Lang = "en";
 
 type I18nValue = {
   lang: Lang;

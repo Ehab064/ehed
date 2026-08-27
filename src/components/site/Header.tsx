@@ -19,7 +19,7 @@ export function Header() {
           <img
             src={logo}
             alt={L("إكسبيريانس هاوس (EHED) — بوابتك التجارية الإقليمية", "Experience House (EHED) — Your Regional Business Gateway")}
-            className="h-10 w-auto shrink-0 lg:h-12"
+            className="h-14 w-auto shrink-0 lg:h-16"
             width={470}
             height={250}
           />

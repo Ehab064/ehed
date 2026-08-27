@@ -22,6 +22,7 @@ export const Route = createFileRoute("/coffee-tea")({
       { property: "og:locale", content: "ar_AR" },
       { property: "og:url", content: "/coffee-tea" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/coffee-tea" }],
   }),
