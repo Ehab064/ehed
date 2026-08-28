@@ -101,7 +101,15 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-ehed flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {L("إكسبيريانس هاوس (EHED). جميع الحقوق محفوظة.", "Experience House (EHED). All rights reserved.")}</p>
-          <p>{L("التجارة الإقليمية • تطوير الأعمال • التوسع في الأسواق", "Regional Trade • Business Development • Market Expansion")}</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/coffee-tea" className="transition-colors hover:text-[var(--teal-soft)]">
+              {L("البن والشاي", "Coffee & Tea")}
+            </Link>
+            <Link to="/privacy" className="transition-colors hover:text-[var(--teal-soft)]">
+              {L("سياسة الخصوصية", "Privacy Policy")}
+            </Link>
+            <span>{L("التجارة الإقليمية • تطوير الأعمال", "Regional Trade • Business Development")}</span>
+          </div>
         </div>
       </div>
     </footer>
