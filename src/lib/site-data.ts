@@ -312,7 +312,7 @@ const AR: typeof EN = {
     { label: "من نحن", to: "/about" },
     { label: "الخدمات", to: "/services" },
     { label: "الأسواق", to: "/markets" },
-    { label: "تواصل معنا", to: "/contact" },
+    
   ],
   SERVICES: [
     {
