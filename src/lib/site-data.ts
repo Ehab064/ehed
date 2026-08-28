@@ -66,7 +66,7 @@ const EN = {
     { label: "About Us", to: "/about" },
     { label: "Services", to: "/services" },
     { label: "Markets", to: "/markets" },
-    { label: "Contact Us", to: "/contact" },
+    
   ],
   SERVICES: [
     {
