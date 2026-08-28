@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = ""; // TODO: set once a domain is configured
+const BASE_URL = "https://ehed.lovable.app";
 
-const PATHS = ["/", "/about", "/services", "/markets", "/contact"];
+const PATHS = ["/", "/about", "/services", "/markets", "/contact", "/privacy"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

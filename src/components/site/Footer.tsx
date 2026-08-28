@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Globe, Mail } from "lucide-react";
+import { MapPin, Phone, Globe, Mail, Linkedin } from "lucide-react";
 import logo from "@/assets/ehed-logo-white.png.asset.json";
 import { useSiteData } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
@@ -61,8 +61,19 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />
-              <a href={`tel:${COMPANY.phoneHref}`} dir="ltr" className="hover:text-[var(--teal-soft)]">
-                {COMPANY.phone}
+              <span className="flex flex-col gap-1">
+                <a href={`tel:${COMPANY.phoneHref}`} dir="ltr" className="hover:text-[var(--teal-soft)]">
+                  {COMPANY.phone}
+                </a>
+                <a href={`tel:${COMPANY.phoneSaHref}`} dir="ltr" className="hover:text-[var(--teal-soft)]">
+                  {COMPANY.phoneSa}
+                </a>
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <Linkedin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--teal)]" />
+              <a href={COMPANY.linkedin} target="_blank" rel="noreferrer" className="hover:text-[var(--teal-soft)]">
+                LinkedIn
               </a>
             </li>
             <li className="flex gap-3">
@@ -90,7 +101,15 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-ehed flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {L("إكسبيريانس هاوس (EHED). جميع الحقوق محفوظة.", "Experience House (EHED). All rights reserved.")}</p>
-          <p>{L("التجارة الإقليمية • تطوير الأعمال • التوسع في الأسواق", "Regional Trade • Business Development • Market Expansion")}</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/coffee-tea" className="transition-colors hover:text-[var(--teal-soft)]">
+              {L("البن والشاي", "Coffee & Tea")}
+            </Link>
+            <Link to="/privacy" className="transition-colors hover:text-[var(--teal-soft)]">
+              {L("سياسة الخصوصية", "Privacy Policy")}
+            </Link>
+            <span>{L("التجارة الإقليمية • تطوير الأعمال", "Regional Trade • Business Development")}</span>
+          </div>
         </div>
       </div>
     </footer>
