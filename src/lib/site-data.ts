@@ -66,7 +66,7 @@ const EN = {
     { label: "About Us", to: "/about" },
     { label: "Services", to: "/services" },
     { label: "Markets", to: "/markets" },
-    { label: "Contact Us", to: "/contact" },
+    
   ],
   SERVICES: [
     {
@@ -312,7 +312,7 @@ const AR: typeof EN = {
     { label: "من نحن", to: "/about" },
     { label: "الخدمات", to: "/services" },
     { label: "الأسواق", to: "/markets" },
-    { label: "تواصل معنا", to: "/contact" },
+    
   ],
   SERVICES: [
     {
