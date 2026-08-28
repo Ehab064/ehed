@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
@@ -73,9 +74,13 @@ export function ContactForm() {
         />
         <span>
           {L(
-            "أوافق على أن تستخدم EHED البيانات المُرسلة للرد على استفساري.",
-            "I agree that EHED may use the information submitted to respond to my inquiry.",
+            "أوافق على أن تستخدم EHED البيانات المُرسلة للرد على استفساري وفق ",
+            "I agree that EHED may use the information submitted to respond to my inquiry, in line with the ",
           )}
+          <Link to="/privacy" className="underline underline-offset-2 hover:text-[var(--teal)]">
+            {L("سياسة الخصوصية", "Privacy Policy")}
+          </Link>
+          .
         </span>
       </label>
 
